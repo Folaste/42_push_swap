@@ -6,7 +6,7 @@
 #    By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 09:54:31 by fleblanc          #+#    #+#              #
-#    Updated: 2022/05/24 12:24:54 by fleblanc         ###   ########.fr        #
+#    Updated: 2022/05/26 19:30:01 by fleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,11 @@ SRC_CHECKER	= test/test.c
 
 SRC_PUSHSWAP= main_ps.c \
 			  error/ft_check_error.c \
+			  operations/move_tab.c \
+			  operations/push.c \
+			  operations/swap.c \
 			  print/ft_print_list.c \
+			  print/ft_print_stacks.c \
 			  structures/lists.c \
 			  structures/stacks.c \
 

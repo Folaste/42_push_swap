@@ -6,11 +6,21 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/20 11:46:17 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/24 10:24:17 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/26 11:13:57 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	ft_count_index(char **list)
+{
+	int	i;
+
+	i = 0;
+	while (list[i])
+		i++;
+	return (i);
+}
 
 char	**ft_create_list(int argc, char **argv)
 {

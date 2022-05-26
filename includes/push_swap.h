@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:09:28 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/24 17:34:23 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/26 19:30:03 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,26 +26,43 @@ struct s_stacks
 };
 
 /*--- main_ps.c ---*/
-void		ft_pushswap(char **list);
 
-/*--- structures ---*/
+/*--- structures/ ---*/
 /*--- list.c ---*/
 char		**ft_create_list(int argc, char **argv);
 void		ft_free_list(char **list);
-
-/*--- stacks.c ---*/
-long long	*ft_create_stack(char **list);
 int			ft_count_index(char **list);
 
-/*--- print ---*/
-/*--- print_list.c ---*/
+/*--- stacks.c ---*/
+t_stacks	*ft_init_struct(char **list);
+void		ft_free_struct(t_stacks *stacks);
+
+/*--- print/ ---*/
+/*--- ft_print_list.c ---*/
 void		ft_print_list(char **list);
 
-/*--- error ---*/
+/*--- ft_print_stacks.c ---*/
+void		ft_print_stacks(t_stacks *stacks);
+
+/*--- operations/ ---*/
+/*--- move_tab.c ---*/
+void		ft_down_tab(int *stack, int len);
+void		ft_up_tab(int *stack, int len);
+
+/*--- push.c ---*/
+void		ft_push_a(t_stacks *stacks);
+void		ft_push_b(t_stacks *stacks);
+
+/*--- push.c ---*/
+void		ft_swap_a(t_stacks *stacks);
+void		ft_swap_b(t_stacks *stacks);
+void		ft_swap_s(t_stacks *stacks);
+
+/*--- error/ ---*/
 /*--- ft_check_error.c ---*/
 int			ft_check_error(char **list);
 int			ft_error_is_not_number(char **list);
-int			ft_error_is_bigger_int(long long *stack);
-int			ft_error_is_dupli(long long *stack);
+int			ft_error_is_bigger_int(int limit, long long *stack);
+int			ft_error_is_dupli(int limit, long long *stack);
 
 #endif

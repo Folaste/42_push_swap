@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 18:56:58 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/24 17:49:36 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/26 11:32:09 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,26 @@
 
 int	ft_check_error(char **list)
 {
-	long long	*stack;
+	long long	*tmp_stack;
+	int			i;
 
-	if (ft_error_is_not_number(list) == 1)
+	i = 0;
+	if (ft_error_is_not_number(list) == 0)
 	{
-		ft_free_list(list);
+		ft_printf("Error1\n");
 		return (0);
 	}
-	stack = ft_create_stack(list);
-	if (ft_error_is_bigger_int(stack) == 1)
+	tmp_stack = ft_calloc(ft_count_index(list), sizeof(long long));
+	while (list[i])
 	{
-		free(stack);
-		return (0);
+		tmp_stack[i] = ft_atoll(list[i]);
+		i++;
 	}
-	if (ft_error_is_dupli(stack) == 1)
-	{
-		free(stack);
-		return (0);
-	}
+	if (ft_error_is_bigger_int(ft_count_index(list), tmp_stack) == 0)
+		ft_printf("Error2\n");
+	else if (ft_error_is_dupli(ft_count_index(list), tmp_stack) == 0)
+		ft_printf("Error3\n");
+	free(tmp_stack);
 	return (1);
 }
 
@@ -44,51 +46,56 @@ int	ft_error_is_not_number(char **list)
 	j = 0;
 	while (list[i])
 	{
-		if (list[i][0] != '-' && ft_isdigit(list[i][0] == 0))
-			return (1);
-		j++;
-		while (list[i][j] != 0)
+		if (list[i][j] == '-' || ft_isdigit(list[i][j]) != 0)
 		{
-			if (ft_isdigit(list[i][j]) == 0)
-				return (1);
 			j++;
+			while (list[i][j])
+			{
+				if (ft_isdigit(list[i][j]) != 0)
+					j++;
+				else
+					return (0);
+			}
 		}
+		else
+			return (0);
+		j = 0;
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
-int	ft_error_is_bigger_int(long long *stack)
+int	ft_error_is_bigger_int(int limit, long long *stack)
 {
 	int	i;
 
 	i = 0;
-	while (stack[i])
+	while (i < limit)
 	{
-		if (stack[i] > 2147483648 || stack[i] < -2147483647)
-			return (1);
+		if (stack[i] > 2147483647 || stack[i] < -2147483648)
+			return (0);
 		i++;
 	}
-	return (0);
+	return (1);
 }
 
-int	ft_error_is_dupli(long long *stack)
+int	ft_error_is_dupli(int limit, long long *stack)
 {
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 1;
-	while (stack[i])
+	while (i + 1 < limit)
 	{
-		while (stack[j])
+		while (j < limit)
 		{
 			if (stack[i] == stack[j])
-				return (1);
+				return (0);
 			j++;
 		}
 		i++;
 		j = i + 1;
 	}
-	return (0);
+	return (1);
 }

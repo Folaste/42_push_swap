@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:06:34 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/24 17:49:39 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/26 19:18:54 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,30 @@
 
 int	main(int argc, char **argv)
 {
-	char	**list;
+	char		**list;
+	t_stacks	*stacks;
 
-	if (argc < 2)
+	if (argc < 2 || argv[1][0] == 0)
 		return (0);
 	else if (argc == 2)
 	{
 		list = ft_split(argv[1], ' ');
-		ft_pushswap(list);
+		ft_check_error(list);
+		stacks = ft_init_struct(list);
+		ft_print_stacks(stacks);
+		ft_push_b(stacks);
+		ft_print_stacks(stacks);
+		ft_swap_a(stacks);
+		ft_print_stacks(stacks);
+		ft_push_a(stacks);
+		ft_print_stacks(stacks);
+		ft_free_struct(stacks);
+		ft_free_list(list);
 	}
 	else
 	{
 		argv++;
-		ft_pushswap(argv);
+		ft_check_error(argv);
 	}
 	return (0);
-}
-
-void	ft_pushswap(char **list)
-{
-	ft_printf("%d\n", ft_check_error(list));
-	if (ft_check_error(list) == 0)
-	{
-		ft_printf("Error");
-		return ;
-	}
-	ft_printf("Oui");
 }
