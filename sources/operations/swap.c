@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 19:11:42 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/26 19:25:49 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/27 12:35:55 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_swap_a(t_stacks *stacks)
 {
-	int tmp;
-	
+	int	tmp;
+
 	if (stacks->size_a >= 2)
 	{
 		tmp = stacks->stack_a[0];
@@ -27,8 +27,8 @@ void	ft_swap_a(t_stacks *stacks)
 
 void	ft_swap_b(t_stacks *stacks)
 {
-	int tmp;
-	
+	int	tmp;
+
 	if (stacks->size_b >= 2)
 	{
 		tmp = stacks->stack_b[0];
@@ -40,7 +40,7 @@ void	ft_swap_b(t_stacks *stacks)
 
 void	ft_swap_s(t_stacks *stacks)
 {
-	int tmp;
+	int	tmp;
 
 	if (stacks->size_a >= 2 && stacks->size_b >= 2)
 	{

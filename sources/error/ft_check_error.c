@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 18:56:58 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/26 11:32:09 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/27 13:56:10 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_check_error(char **list)
 	i = 0;
 	if (ft_error_is_not_number(list) == 0)
 	{
-		ft_printf("Error1\n");
+		ft_printf("Error\n");
 		return (0);
 	}
 	tmp_stack = ft_calloc(ft_count_index(list), sizeof(long long));
@@ -29,10 +29,13 @@ int	ft_check_error(char **list)
 		tmp_stack[i] = ft_atoll(list[i]);
 		i++;
 	}
-	if (ft_error_is_bigger_int(ft_count_index(list), tmp_stack) == 0)
-		ft_printf("Error2\n");
-	else if (ft_error_is_dupli(ft_count_index(list), tmp_stack) == 0)
-		ft_printf("Error3\n");
+	if (ft_error_is_bigger_int(ft_count_index(list), tmp_stack) == 0
+		|| ft_error_is_dupli(ft_count_index(list), tmp_stack) == 0)
+	{
+		ft_printf("Error\n");
+		free(tmp_stack);
+		return (0);
+	}
 	free(tmp_stack);
 	return (1);
 }

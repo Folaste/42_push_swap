@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 18:55:55 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/26 11:14:48 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/27 11:59:33 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ void	ft_print_stacks(t_stacks *stacks)
 			i++;
 		}
 	}
+	ft_print_stacks_end();
+}
+
+void	ft_print_stacks_end(void)
+{
 	ft_printf(" ----------- || ----------- \n");
 	ft_printf("   stack A   ||   stack B   \n");
 }

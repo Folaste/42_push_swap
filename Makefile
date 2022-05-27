@@ -6,14 +6,14 @@
 #    By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 09:54:31 by fleblanc          #+#    #+#              #
-#    Updated: 2022/05/26 19:30:01 by fleblanc         ###   ########.fr        #
+#    Updated: 2022/05/27 18:46:14 by fleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # **************************************************************************** #
 # Names
 
-CHECKER		= checker
+CHECKER		= checker_test
 PUSH_SWAP	= push_swap
 LIBNAME		= libft.a
 
@@ -47,14 +47,21 @@ SRC_CHECKER	= test/test.c
 
 SRC_PUSHSWAP= main_ps.c \
 			  error/ft_check_error.c \
+			  operations/min.c \
 			  operations/move_tab.c \
 			  operations/push.c \
+			  operations/reverse_rotate.c \
+			  operations/rotate.c \
 			  operations/swap.c \
 			  print/ft_print_list.c \
 			  print/ft_print_stacks.c \
+			  sort/case2.c \
+			  sort/case3.c \
+			  sort/case4.c \
+			  sort/case5.c \
+			  sort/is_sorted.c \
 			  structures/lists.c \
 			  structures/stacks.c \
-
 
 # **************************************************************************** #
 # Variables where are listed the names of sources and objects files

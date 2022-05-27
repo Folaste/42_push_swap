@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_tab.c                                         :+:      :+:    :+:   */
+/*   case4.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 18:49:38 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/27 17:53:18 by fleblanc         ###   ########.fr       */
+/*   Created: 2022/05/27 12:13:15 by fleblanc          #+#    #+#             */
+/*   Updated: 2022/05/27 18:36:32 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-void	ft_down_tab(int *stack, int len)
+void	ft_sort_4(t_stacks *stacks)
 {
-	int	i;
-
-	i = len;
-	while (i != 0)
+	if (ft_is_sorted(stacks) == 0)
 	{
-		stack[i] = stack[i - 1];
-		i--;
-	}
-}
-
-void	ft_up_tab(int *stack, int len)
-{
-	int	i;
-
-	i = 0;
-	while (i != len - 1)
-	{
-		stack[i] = stack[i + 1];
-		i++;
+		ft_min_in_top_a(stacks);
+		if (ft_is_sorted(stacks) == 0 && ft_a_is_sorted(stacks) == 0)
+		{
+			ft_push_b(stacks);
+			ft_sort_3(stacks);
+			ft_push_a(stacks);
+		}
 	}
 }
