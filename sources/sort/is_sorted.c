@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 10:58:30 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/27 18:35:37 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/28 19:07:15 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int	ft_is_sorted(t_stacks *stacks)
 	return (1);
 }
 
-int ft_a_is_sorted(t_stacks *stacks)
+int	ft_a_is_sorted(t_stacks *stacks)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < stacks->size_a - 1)
@@ -42,9 +42,9 @@ int ft_a_is_sorted(t_stacks *stacks)
 	return (1);
 }
 
-int ft_b_is_sorted(t_stacks *stacks)
+int	ft_b_is_sorted(t_stacks *stacks)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < stacks->size_b - 1)

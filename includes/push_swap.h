@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:09:28 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/27 18:46:08 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/05/28 19:14:48 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,9 @@ void		ft_print_stacks(t_stacks *stacks);
 void		ft_print_stacks_end(void);
 
 /*--- sort/ ---*/
+	/*--- case100.c ---*/
+void		ft_sort_100(t_stacks *stacks);
+
 	/*--- case2.c ---*/
 void		ft_sort_2(t_stacks *stacks);
 

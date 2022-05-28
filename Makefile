@@ -6,7 +6,7 @@
 #    By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 09:54:31 by fleblanc          #+#    #+#              #
-#    Updated: 2022/05/27 18:46:14 by fleblanc         ###   ########.fr        #
+#    Updated: 2022/05/28 19:13:46 by fleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,6 +55,7 @@ SRC_PUSHSWAP= main_ps.c \
 			  operations/swap.c \
 			  print/ft_print_list.c \
 			  print/ft_print_stacks.c \
+			  sort/case100.c \
 			  sort/case2.c \
 			  sort/case3.c \
 			  sort/case4.c \
