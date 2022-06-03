@@ -96,11 +96,6 @@ WHITE		= "\033[0;37m"
 # **************************************************************************** #
 # Rules
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
-		@$(MKDIR) $(dir $@)
-		@$(CC) $(WFLAGS) $(IFLAGS) -c $< -o $@
-		@printf $(CR)"[ $(BASENAME)/%s ]"$(CLEAR) $@
-
 all:	$(LFT) $(PUSH_SWAP) #$(CHECKER)
 
 $(LFT):	
@@ -114,6 +109,11 @@ $(PUSH_SWAP): $(LFT) $(OBJ_PS)
 		@$(CC) $(WFLAGS) $(OBJ_PS) $(LFT) -o $(PUSH_SWAP)
 		@printf $(CR)$(GREEN)"✓ $(PUSH_SWAP) is created\n"$(EOC)
 
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+		@$(MKDIR) $(dir $@)
+		@$(CC) $(WFLAGS) $(IFLAGS) -c $< -o $@
+		@printf $(CR)"[ $(BASENAME)/%s ]"$(CLEAR) $@
+		
 clean:
 		@if [ -d $(OBJDIR) ]; then \
 			$(RM) $(OBJDIR) \
