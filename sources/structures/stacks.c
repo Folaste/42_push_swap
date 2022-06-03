@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 12:04:58 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/27 18:16:38 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:14:24 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,17 +22,11 @@ t_stacks	*ft_init_struct(char **list)
 		return (NULL);
 	stacks->size_a = ft_count_index(list);
 	stacks->size_b = 0;
-	stacks->stack_a = ft_calloc(stacks->size_a, sizeof(int));
-	if (!stacks->stack_a)
+	stacks->stack_a = ft_calloc(stacks->size_a + 1, sizeof(int));
+	stacks->stack_b = ft_calloc(stacks->size_a + 1, sizeof(int));
+	if (!stacks->stack_a || !stacks->stack_b)
 	{
-		free(stacks);
-		return (NULL);
-	}
-	stacks->stack_b = ft_calloc(stacks->size_a, sizeof(int));
-	if (!stacks->stack_b)
-	{
-		free(stacks->stack_a);
-		free(stacks);
+		ft_free_struct(stacks);
 		return (NULL);
 	}
 	i = -1;
@@ -43,7 +37,9 @@ t_stacks	*ft_init_struct(char **list)
 
 void	ft_free_struct(t_stacks *stacks)
 {
-	free(stacks->stack_a);
-	free(stacks->stack_b);
+	if (stacks->stack_a)
+		free(stacks->stack_a);
+	if (stacks->stack_b)
+		free(stacks->stack_b);
 	free(stacks);
 }

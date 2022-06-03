@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 11:06:34 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/28 19:14:41 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/06/02 19:33:54 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,9 @@ void	ft_pushswap(char **list)
 		ft_sort_4(stacks);
 	else if (stacks->size_a == 5)
 		ft_sort_5(stacks);
-	else if (stacks->size_a > 5 && stacks->size_a <= 100)
+	else if (stacks->size_a > 5 && stacks->size_a <= 102)
 		ft_sort_100(stacks);
-/*	else
-**		ft_sort_3(stacks);
-*/
-//	ft_print_stacks(stacks);
+	else
+		ft_sort_500(stacks);
 	ft_free_struct(stacks);
 }

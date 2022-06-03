@@ -6,7 +6,7 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/27 12:13:15 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/27 18:36:17 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/06/02 19:33:45 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,11 @@
 
 void	ft_sort_5(t_stacks *stacks)
 {
+	if (stacks->size_a <= 4)
+	{
+		ft_sort_4(stacks);
+		return ;
+	}
 	if (ft_is_sorted(stacks) == 0)
 	{
 		ft_min_in_top_a(stacks);
