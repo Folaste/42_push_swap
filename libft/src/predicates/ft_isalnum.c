@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test.c                                             :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
+/*   By: fleblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 15:09:41 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/24 15:10:44 by fleblanc         ###   ########.fr       */
+/*   Created: 2022/03/28 15:51:09 by fleblanc          #+#    #+#             */
+/*   Updated: 2022/03/29 12:52:44 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "libft.h"
 
-int	main(void)
+int	ft_isalnum(int c)
 {
-	int	a;
-
-	a = ft_strlen("oui");
-	ft_printf("Hello, World! %d\n", a);
+	if ((48 <= c && c <= 57) || (65 <= c && c <= 90) || (97 <= c && c <= 122))
+		return (8);
 	return (0);
 }

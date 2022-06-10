@@ -6,7 +6,7 @@
 #    By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 09:54:31 by fleblanc          #+#    #+#              #
-#    Updated: 2022/06/03 12:17:31 by fleblanc         ###   ########.fr        #
+#    Updated: 2022/06/10 14:02:46 by fleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,10 +35,10 @@ RM			= rm -rf
 # **************************************************************************** #
 # Directories
 
-INCDIR		= ./includes
+INCDIR		= ./inc
 LIBDIR		= libft
-OBJDIR		= ./objects
-SRCDIR		= ./sources
+OBJDIR		= ./obj
+SRCDIR		= ./src
 
 # **************************************************************************** #
 # List of sources files
