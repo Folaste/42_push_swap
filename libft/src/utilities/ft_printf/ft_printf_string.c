@@ -6,11 +6,11 @@
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/21 12:02:18 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/06 16:50:10 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/06/09 14:57:14 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
 void	ft_return_value_s(t_printf *tab)
 {

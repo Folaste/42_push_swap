@@ -6,22 +6,15 @@
 /*   By: fleblanc <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 17:52:48 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/04/13 16:50:40 by fleblanc         ###   ########.fr       */
+/*   Updated: 2022/06/09 15:13:22 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../inc/libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-
-	i = 0;
 	if (!s)
 		return ;
-	while (s[i])
-	{
-		ft_putchar_fd(s[i], fd);
-		i++;
-	}
+	write(fd, s, ft_strlen(s));
 }

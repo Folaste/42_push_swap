@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_btoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fleblanc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/28 14:24:16 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/03/28 16:00:17 by fleblanc         ###   ########.fr       */
+/*   Created: 2022/06/08 17:51:19 by fleblanc          #+#    #+#             */
+/*   Updated: 2022/06/09 15:41:26 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_isalpha(int c)
+unsigned int	ft_btoi(char *tab)
 {
-	if ((65 <= c && c <= 90) || (97 <= c && c <= 122))
-		return (1024);
-	return (0);
+	int				i;
+	int				power;
+	unsigned int	result;
+
+	i = 31;
+	power = 1;
+	result = 0;
+	while (i != -1)
+	{
+		if (tab[i] == '1')
+			result += ((tab[i] - '0') * power);
+		power *= 2;
+		i--;
+	}
+	return (result);
 }

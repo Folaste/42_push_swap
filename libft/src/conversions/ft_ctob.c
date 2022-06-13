@@ -1,28 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_ctob.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fleblanc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/06 12:12:20 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/04/13 16:51:29 by fleblanc         ###   ########.fr       */
+/*   Created: 2022/06/08 18:43:48 by fleblanc          #+#    #+#             */
+/*   Updated: 2022/06/09 12:05:09 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char*))
+char	*ft_ctob(int c)
 {
-	unsigned int	i;
+	char			*tab;
+	int				i;
+	unsigned int	power;
 
+	tab = ft_calloc(9, sizeof(char));
+	if (!tab)
+		return (NULL);
 	i = 0;
-	if (!s || !f)
-		return ;
-	while (*s)
+	power = 128;
+	while (i < 8)
 	{
-		(*f)(i, s);
+		if (c / power == 0)
+			tab[i] = '0';
+		else
+		{
+			tab[i] = '1';
+			c -= power;
+		}
+		power /= 2;
 		i++;
-		s++;
 	}
+	return (tab);
 }

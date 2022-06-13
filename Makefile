@@ -6,7 +6,7 @@
 #    By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/18 09:54:31 by fleblanc          #+#    #+#              #
-#    Updated: 2022/06/10 14:02:46 by fleblanc         ###   ########.fr        #
+#    Updated: 2022/06/10 15:19:21 by fleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -96,6 +96,11 @@ WHITE		= "\033[0;37m"
 # **************************************************************************** #
 # Rules
 
+$(OBJDIR)/%.o: $(SRCDIR)/%.c
+		@$(MKDIR) $(dir $@)
+		@$(CC) $(WFLAGS) $(IFLAGS) -c $< -o $@
+		@printf $(CR)"[ $(BASENAME)/%s ]"$(CLEAR) $@
+
 all:	$(LFT) $(PUSH_SWAP) #$(CHECKER)
 
 $(LFT):	
@@ -109,11 +114,6 @@ $(PUSH_SWAP): $(LFT) $(OBJ_PS)
 		@$(CC) $(WFLAGS) $(OBJ_PS) $(LFT) -o $(PUSH_SWAP)
 		@printf $(CR)$(GREEN)"✓ $(PUSH_SWAP) is created\n"$(EOC)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%.c
-		@$(MKDIR) $(dir $@)
-		@$(CC) $(WFLAGS) $(IFLAGS) -c $< -o $@
-		@printf $(CR)"[ $(BASENAME)/%s ]"$(CLEAR) $@
-		
 clean:
 		@if [ -d $(OBJDIR) ]; then \
 			$(RM) $(OBJDIR) \

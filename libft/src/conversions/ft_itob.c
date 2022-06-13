@@ -1,39 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_char.c                                   :+:      :+:    :+:   */
+/*   ft_itob.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fleblanc <fleblanc@student.42angoulem      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/19 11:25:35 by fleblanc          #+#    #+#             */
-/*   Updated: 2022/05/06 16:47:44 by fleblanc         ###   ########.fr       */
+/*   Created: 2022/06/08 16:18:28 by fleblanc          #+#    #+#             */
+/*   Updated: 2022/06/08 17:50:38 by fleblanc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
 
-int	ft_printf_char(t_printf *tab, int i)
+char	*ft_itob(unsigned int nb)
 {
-	int	c;
-	int	index;
+	char			*tab;
+	int				i;
+	unsigned int	power;
 
-	c = va_arg(tab->args, int);
-	if (tab->minus == 0)
+	tab = ft_calloc(33, sizeof(char));
+	if (!tab)
+		return (NULL);
+	i = 0;
+	power = 2147483648;
+	while (i < 32)
 	{
-		ft_putchar_fd(c, 1);
-		tab->tot_len -= 1;
-	}
-	else
-	{
-		tab->tot_len += tab->width - 3 - ft_intlen(tab->width);
-		index = tab->width - 1;
-		ft_putchar_fd(c, 1);
-		while (index != 0)
+		if (nb / power == 0)
+			tab[i] = '0';
+		else
 		{
-			ft_putchar_fd(' ', 1);
-			index--;
+			tab[i] = '1';
+			nb -= power;
 		}
+		power /= 2;
+		i++;
 	}
-	i++;
-	return (i);
+	tab[i] = 0;
+	return (tab);
 }

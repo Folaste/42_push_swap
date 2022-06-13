@@ -6,7 +6,7 @@
 #    By: fleblanc <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/28 13:19:35 by fleblanc          #+#    #+#              #
-#    Updated: 2022/06/10 14:02:30 by fleblanc         ###   ########.fr        #
+#    Updated: 2022/06/13 11:40:52 by fleblanc         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ NAME		= libft.a
 # **************************************************************************** #
 # Compilator
 
-CC			= gcc
+CC			= gcc -ggdb
 WFLAGS		= -Wall -Wextra -Werror
 IFLAGS		= -I $(INCDIR)
 
@@ -27,7 +27,7 @@ IFLAGS		= -I $(INCDIR)
 
 AR			= ar -rcs
 MKDIR		= mkdir -p
-NORMINETTE	= norminette
+NORMINETTE	= /usr/bin/norminette
 RM			= rm -rf
 
 # **************************************************************************** #
@@ -42,7 +42,11 @@ SRCDIR		= ./src
 
 SRCNAME		= conversions/ft_atoi.c \
 			  conversions/ft_atoll.c \
+			  conversions/ft_btoc.c \
+			  conversions/ft_btoi.c \
+			  conversions/ft_ctob.c \
 			  conversions/ft_itoa.c \
+			  conversions/ft_itob.c \
 			  conversions/ft_tolower.c \
 			  conversions/ft_toupper.c \
 			  counters/ft_intlen.c \
@@ -67,6 +71,7 @@ SRCNAME		= conversions/ft_atoi.c \
 			  predicates/ft_isascii.c \
 			  predicates/ft_isdigit.c \
 			  predicates/ft_isprint.c \
+			  print/ft_print_error.c \
 			  print/ft_putchar_fd.c \
 			  print/ft_putendl_fd.c \
 			  print/ft_putnbr_base_fd.c \
@@ -127,7 +132,6 @@ BASENAME	= `basename $(PWD)`
 
 # **************************************************************************** #
 # Rules
-
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.c
 		@$(MKDIR) $(dir $@)
